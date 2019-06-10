@@ -16,10 +16,13 @@ and open the template in the editor.
         
         $site = "https://www5.gogoanime.tv";
         
-        var_dump(searchAnime($site, "Death"));
+        $searchResult = (searchAnime($site, "Death"));
         
-        //$downloadPage = getDownloadPageLink("https://www5.gogoanime.tv/death-note-dub-episode-8");
-        //downloadAnime($downloadPage);
+        $episodes = getEpisodes($searchResult[0]['link']);
+        
+        $downloadPage = getDownloadPageLink($episodes[1]);
+        
+        downloadAnime($downloadPage);
         
         ?>
     </body>
