@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 
 function getDownloadPageLink($episodePage){
     return getHrefFromNodeValue(file_get_contents($episodePage), 'Download');
@@ -6,6 +7,13 @@ function getDownloadPageLink($episodePage){
 
 function downloadAnime($downloadPageContent){
     $downloadLink =  getHrefFromNodeValue2(file_get_contents($downloadPageContent), 'auto');
+    if(is_null($downloadLink)){
+		$downloadLink =  getHrefFromNodeValue2(file_get_contents($downloadPageContent), '720');
+	}
+    if(is_null($downloadLink)){
+		$downloadLink =  getHrefFromNodeValue2(file_get_contents($downloadPageContent), '360');
+	}
+    
     echo "<script type=\"text/javascript\">
            window.location = \"$downloadLink\"
             </script>";

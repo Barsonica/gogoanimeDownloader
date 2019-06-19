@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 
 function searchAnime($site, $searchIndex){
     $returnValue = array();
@@ -14,9 +15,10 @@ function searchAnime($site, $searchIndex){
         if($link->getAttribute("class") == "name"){
             $returnValue[$index]["name"] = $link->nodeValue;
             $returnValue[$index]["link"] = $site . $link->firstChild->getAttribute("href");
+            
+        $index++;
         }
         
-        $index++;
     } 
     return $returnValue;
 }
@@ -35,7 +37,7 @@ function getEpisodes($animeLink){
             array_pop($returnValue);
             return $returnValue;
         }
-        
+        echo $index;
         $index++;
     }
 }
