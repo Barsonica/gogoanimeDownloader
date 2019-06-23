@@ -4,33 +4,38 @@
     <head>
         <meta charset="UTF-8">
         <title>Gogoanime downloader</title>
+		<link rel="stylesheet" href="style.css"> 
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
     <body>
 		
-        <form method="GET" action="episode.php">
-			
-	<label>Enter episode link</label>
-        <input type="text" name="episodeLink">
-        <input type="submit" value="downloadEpisode">  
-           
-	</form> 
+		<div class="w3-container" style="width:80%;">
 		
-        <form method="GET" action="series.php">
+			<form method="GET" action="episode.php">
 			
-        <label>Enter series link</label>
-        <input type="text" name="seriesLink">
-        <input type="submit" value="downloadSeries">  
+				<label>Enter episode link</label>
+				<input type="text" name="episodeLink" class="w3-input">
+				<input type="submit" value="download Episode">  
+           
+			</form> 
+		
+			<form method="GET" action="series.php">
+				
+				<label>Enter series link</label>
+				<input type="text" name="seriesLink" class="w3-input">
+				<input type="submit" value="view Series">  
         
-        </form> 
+			</form> 
         
-        <form method="GET" action="search.php">
+			<form method="GET" action="search.php">
 			
-        <label>Enter search term</label>
-        <input type="text" name="search">
-        <input type="submit" value="search">  
+				<label>Enter search term</label>
+				<input type="text" name="search" class="w3-input">
+				<input type="submit" value="search">  
         
-        </form> 
+			</form> 
         
+        </div>
         
     </body>
 </html>

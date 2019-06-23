@@ -14,14 +14,14 @@
 
 <?php
 error_reporting(0);
-$site = "https://www5.gogoanime.tv";
 include 'fileFromEpisodeLink.php';
 include 'selectEpisode.php';
 
 $episodes = getEpisodes($_GET['seriesLink']);
 	
 foreach($episodes as $a){
-	echo "<a href=\"episode.php?episodeLink=$a\"><button>$a</button></a>";
+    $url = urlencode($a);
+    echo "<a href=\"episode.php?episodeLink=$url\"><button>$a</button></a>";
 }
 
 echo "<button onclick=\"downloadAll()\">Download All</button>";

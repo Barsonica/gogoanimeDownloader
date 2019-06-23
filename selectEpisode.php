@@ -37,7 +37,7 @@ function getEpisodes($animeLink){
             array_pop($returnValue);
             return $returnValue;
         }
-        echo $index;
+        //echo $index;
         $index++;
     }
 }
